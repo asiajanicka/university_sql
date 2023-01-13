@@ -2,8 +2,9 @@ use university_jjm_db;
 
 # join ALL tables
 
-SELECT s.name AS subject, t.first_name AS teacher_f_name, t.last_name AS teacher_l_name, d.name AS dept, b.name AS building, room_number AS room, 
-tte.time, tte.week_day, g.name AS group_name, st.first_name AS student_f_name, st.last_name AS student_l_name, grades.value AS grade
+SELECT s.name AS subject, concat(t.first_name, ' ', t.last_name) AS teacher, d.name AS dept, b.name AS building, room_number AS room, 
+tte.time, tte.week_day, g.name AS group_name, concat(st.first_name, ' ', st.last_name) AS student, grades.value AS grade,
+concat(ps.name, ' ', ps.address) as parking_spot, concat(pa.login, ' ', pa.password) as student_creds 
 FROM subjects AS s
 CROSS JOIN teachers AS t ON t.id = s.teacher_id 
 CROSS JOIN departments AS d ON d.id = t.department_id
@@ -13,7 +14,9 @@ CROSS JOIN time_table_entries AS tte ON tte.room_id = r.id
 JOIN groups_has_time_table_entries AS gh ON tte.id = gh.time_table_entry_id
 JOIN student_groups AS g ON g.id = gh.student_group_id
 CROSS JOIN students AS st ON g.id = st.student_group_id
-CROSS JOIN grades ON student_id = st.id;
+CROSS JOIN grades ON student_id = st.id
+CROSS JOIN parking_spots AS ps ON ps.teacher_id = t.id
+CROSS JOIN portal_accounts AS pa ON pa.student_id = st.id;
 
 #=================================================================================================================================
 # JOINS

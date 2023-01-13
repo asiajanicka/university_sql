@@ -84,3 +84,17 @@ INSERT INTO groups_has_time_table_entries (student_group_id, time_table_entry_id
 (4, 15), (4, 16), (4, 17), (4, 18),
 (5, 19), (5, 20), (5, 21), (5, 22),
 (6, 23), (6, 24), (6, 25), (6, 26), (6, 27);
+
+INSERT INTO parking_spots (name, address, teacher_id) VALUE
+('PS1', 'South Parks St, Oxford', 1), 
+('PS2', 'South Parks St, Oxford', 2), 
+('PR1', '128 Bullingdon Road, Oxford', 3), 
+('PR2', '128 Bullingdon Road, Oxford', 4), 
+('PR3', '128 Bullingdon Road, Oxford', 5);
+
+INSERT INTO portal_accounts (login, password, issue_date, expiry_date, student_id) VALUES
+('eric_smith', 'smith', DATE '2021-09-01', DATE '2026-09-01', 1), ('jane_fox', 'fox', DATE '2021-09-01', DATE '2026-09-01', 2), ('john_grey', 'grey', DATE '2021-09-01', DATE '2026-09-06', 3), ('jack_yellow', 'yellow', DATE '2021-09-01', DATE '2026-09-01', 4),
+('jake_edwards', 'edwards', DATE '2021-09-04', DATE '2026-09-04', 5), ('trevor_kubat', 'kubat', DATE '2021-09-04', DATE '2026-09-04', 6), ('norma_violet', 'violet', DATE '2021-09-04', DATE '2026-09-04', 7), ('dona_white', 'white', DATE '2021-09-04', DATE '2026-09-04', 8),
+('mark_lee', 'lee', DATE '2021-09-02', DATE '2026-09-02', 9), ('tom_smith', 'smith', DATE '2021-09-02', DATE '2026-09-02', 10), 
+('anna_martin', 'martin', DATE '2020-09-02', DATE '2025-09-02', 13), ('dora_wang', 'wang', DATE '2020-09-02', DATE '2025-09-02', 14),
+('leo_evans', 'evans', DATE '2020-09-02', DATE '2025-09-02', 16), ('adam_davies', 'davies', DATE '2020-09-02', DATE '2025-09-02', 18), ('julia_johnson', 'johnson', DATE '2020-09-02', DATE '2025-09-02', 19), ('hanna_murphy', 'murphy', DATE '2020-09-02', DATE '2025-09-02', 20);
